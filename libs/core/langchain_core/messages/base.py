@@ -130,9 +130,7 @@ class BaseMessageChunk(BaseMessage):
                     else:
                         merged[k] = merged[k] + [e]
             else:
-                raise TypeError(
-                    f"Additional kwargs key {k} already exists in this message."
-                )
+                merged[k] = v
         return merged
 
     def __add__(self, other: Any) -> BaseMessageChunk:  # type: ignore
